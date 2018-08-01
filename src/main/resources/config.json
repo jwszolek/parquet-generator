@@ -5,14 +5,17 @@
     {
       "name":"id",
       "uniquenessPercentage":10,
-      "allowNulls":true,
-      "type": "Int"
+      "type": ["Int","null"]
     },
     {
-      "name":"id",
+      "name":"name",
       "uniquenessPercentage":100,
-      "allowNulls":false,
-      "type": "String"
+      "type": ["String","null"]
+    },
+    {
+      "name":"location",
+      "uniquenessPercentage":100,
+      "type": ["String","null"]
     }
   ]
 }

@@ -2,6 +2,8 @@ package io.datamass;
 
 import io.datamass.config.Config;
 import org.apache.avro.Schema;
+import org.codehaus.jettison.json.JSONArray;
+import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
 /**
@@ -9,21 +11,34 @@ import org.codehaus.jettison.json.JSONObject;
  */
 public class Generator {
 
-    public static Schema produceSchema(Config config){
-        try {
+    public static Schema produceSchema(Config config) throws JSONException{
 
-            new JSONObject().put("type", "asd")
-                    .put("name", "")
-                    .put("namespace", "")
-        }catch(Exception ex){
-            
-        }
+            JSONObject jobj = new JSONObject().put("type", "recordsGenerator")
+                    .put("name", "recordsGenerator")
+                    .put("namespace", "io.datamass");
 
+            JSONArray columns = new JSONArray();
 
+            config.getColumns().stream().forEach(item -> {
 
+                try {
+                    JSONObject column = new JSONObject();
+                    column.put("name", item.getName());
 
+                    JSONArray typeArray = new JSONArray();
+                    item.getType().stream().forEach(type -> typeArray.put(type));
+                    column.put("type",typeArray);
 
+                    columns.put(column);
 
+                } catch (Exception ex) {
+                    System.err.println(ex);
+                }
+            });
+
+            jobj.put("fields",columns);
+
+        return new Schema.Parser().parse(jobj.toString());
     }
 
 

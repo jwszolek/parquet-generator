@@ -2,6 +2,8 @@ package io.datamass;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.datamass.config.Config;
+import netscape.javascript.JSException;
+import org.codehaus.jettison.json.JSONException;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
@@ -22,11 +24,11 @@ public class Driver {
     @Option(name="-config",usage="json config file")
     private String configFile = "";
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException, JSONException{
         new Driver().doMain(args);
     }
 
-    public void doMain(String[] args) throws IOException {
+    public void doMain(String[] args) throws IOException, JSONException {
         CmdLineParser parser = new CmdLineParser(this);
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -47,7 +49,7 @@ public class Driver {
         if(!configFile.isEmpty()){
             Config config = objectMapper.readValue(new File(configFile), Config.class);
 
-            Generator.produce(config);
+            Generator.produceSchema(config);
 
             System.out.println(configFile);
         }
