@@ -5,7 +5,7 @@ import java.util.List;
 public class Config {
 
     private String outputFile;
-    private String rows;
+    private Integer rows;
     private List<Column> columns;
 
     public String getOutputFile() {
@@ -16,11 +16,11 @@ public class Config {
         this.outputFile = outputFile;
     }
 
-    public String getRows() {
+    public Integer getRows() {
         return rows;
     }
 
-    public void setRows(String rows) {
+    public void setRows(Integer rows) {
         this.rows = rows;
     }
 

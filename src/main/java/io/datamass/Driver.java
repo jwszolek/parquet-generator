@@ -7,9 +7,11 @@ import org.codehaus.jettison.json.JSONException;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
+import org.apache.avro.Schema;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 import static org.kohsuke.args4j.OptionHandlerFilter.ALL;
 
@@ -49,9 +51,12 @@ public class Driver {
         if(!configFile.isEmpty()){
             Config config = objectMapper.readValue(new File(configFile), Config.class);
 
-            Generator.produceSchema(config);
+            Schema parquetSchema = Generator.produceSchema(config);
+            HashMap<String, RandomValue> valueMap = Generator.generateRandomValues(config);
 
-            System.out.println(configFile);
+            ParquetProducer pProducer = new ParquetProducer(config, parquetSchema, valueMap);
+            pProducer.save();
+
         }
     }
 }
