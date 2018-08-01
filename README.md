@@ -23,7 +23,7 @@ Parquet data file will be filled up with random data.
     {
       "name":"name",
       "uniquenessPercentage":100,
-      "type": ["string","null"]
+      "type": ["string"]
     },
     {
       "name":"location",
