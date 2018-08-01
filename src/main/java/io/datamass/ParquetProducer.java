@@ -41,15 +41,15 @@ public class ParquetProducer {
 
         try (ParquetWriter<GenericRecord> parquetWriter
                      = AvroParquetWriter.<GenericRecord>builder(new Path(config.getOutputFile()))
-                .withCompressionCodec(CompressionCodecName.UNCOMPRESSED)
+                .withCompressionCodec(CompressionCodecName.SNAPPY)
                 .withSchema(parquetSchema).build()) {
 
             IntStream.range(0, config.getRows()).boxed()
                     .map(i -> record(parquetSchema, i))
                     .forEach(r -> {
                         try {
-                            System.out.println(r.toString());
-                            //parquetWriter.write(r);
+                            //System.out.println(r.toString());
+                            parquetWriter.write(r);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
