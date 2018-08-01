@@ -4,7 +4,7 @@ Parquet files generator. Useful for generating files for testing purposes. Allow
 
 ## Config file
 
-'''
+```
 {
   "outputFile":"/tmp/file.parquet",
   "rows":5000,
@@ -26,4 +26,4 @@ Parquet files generator. Useful for generating files for testing purposes. Allow
     }
   ]
 }
-'''
+```
