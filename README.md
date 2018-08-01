@@ -31,3 +31,18 @@ There is also a possibility to define uniquenessPercentage value. It defines how
   ]
 }
 ```
+
+## Build
+This is how you can build the project
+
+```
+git clone https://github.com/jwszolek/parquet-generator.git
+cd ./parquet-generator
+mvn clean install
+```
+
+## How to use it
+
+
+
+
