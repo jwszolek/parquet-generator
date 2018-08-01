@@ -1,0 +1,35 @@
+{
+  "type":"record",
+  "name":"AccessLog",
+  "namespace":"fr.layer4.parquet",
+  "fields":[
+    {
+      "name":"id",
+      "type":[
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name":"useragent",
+      "type":[
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name":"ip",
+      "type":[
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name":"path",
+      "type":[
+        "string",
+        "null"
+      ]
+    }
+  ]
+}

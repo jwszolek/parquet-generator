@@ -1,0 +1,16 @@
+{
+  "outputFile":"/tmp/file.parquet",
+  "rows":5000,
+  "columns":[
+    {
+      "name":"id",
+      "uniquenessPercentage":10,
+      "allowNulls":true
+    },
+    {
+      "name":"id",
+      "uniquenessPercentage":100,
+      "allowNulls":false
+    }
+  ]
+}
