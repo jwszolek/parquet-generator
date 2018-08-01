@@ -45,6 +45,31 @@ mvn clean install
 
 ## How to use it
 
+```
+java jar parquet-generator.jar
+```
+
+expected outout:
+
+```
+{"id": "1786", "name": "sD2ojyRWLX", "location": "FlOSmC0iRr"}
+{"id": "null", "name": "i1ZsxFUVhq", "location": "M3lNXWm3ra"}
+{"id": "null", "name": "VhwSfTFb0x", "location": "M4jFyRBU5M"}
+{"id": "null", "name": "9yAyElnACg", "location": "aQowXmxnPs"}
+{"id": "null", "name": "xaFnqvA8my", "location": "s10olWjMT3"}
+{"id": "null", "name": "JO0NQpmlq6", "location": "lZF3UtH53U"}
+{"id": "null", "name": "klJFA5EO8o", "location": "null"}
+{"id": "null", "name": "B6qaJa2zr9", "location": "null"}
+{"id": "null", "name": "XB0gaohb3b", "location": "null"}
+{"id": "null", "name": "Vtqg6cektd", "location": "null"}
+```
+
+
+
+
+
+
+
 
 
 
