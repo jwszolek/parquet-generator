@@ -1,7 +1,7 @@
 package io.datamass;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.datamass.config.GeneratorConfig;
+import io.datamass.config.Config;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
@@ -11,7 +11,7 @@ import java.io.IOException;
 
 import static org.kohsuke.args4j.OptionHandlerFilter.ALL;
 
-// jar --numberOfcolumns 5 --uniqnessPercent 100
+// jar --config ./src/main/resources/config.json
 
 
 /**
@@ -44,9 +44,10 @@ public class Driver {
             return;
         }
 
-
         if(!configFile.isEmpty()){
-            GeneratorConfig config = objectMapper.readValue(new File(configFile), GeneratorConfig.class);
+            Config config = objectMapper.readValue(new File(configFile), Config.class);
+
+            Generator.produce(config);
 
             System.out.println(configFile);
         }

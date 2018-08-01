@@ -5,12 +5,14 @@
     {
       "name":"id",
       "uniquenessPercentage":10,
-      "allowNulls":true
+      "allowNulls":true,
+      "type": "Int"
     },
     {
       "name":"id",
       "uniquenessPercentage":100,
-      "allowNulls":false
+      "allowNulls":false,
+      "type": "String"
     }
   ]
 }

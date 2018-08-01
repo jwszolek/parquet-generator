@@ -2,7 +2,7 @@ package io.datamass.config;
 
 import java.util.List;
 
-public class GeneratorConfig {
+public class Config {
 
     private String outputFile;
     private String rows;

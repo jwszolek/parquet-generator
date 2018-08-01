@@ -30,7 +30,7 @@ public class ParquetUtils {
 
         try (ParquetWriter<GenericRecord> parquetWriter
                      = AvroParquetWriter.<GenericRecord>builder(new Path(path))
-                .withCompressionCodec(CompressionCodecName.SNAPPY)
+                .withCompressionCodec(CompressionCodecName.UNCOMPRESSED)
                 .withSchema(avroSchema).build()) {
 
             IntStream.range(0, 10).boxed()
