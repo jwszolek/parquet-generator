@@ -46,7 +46,7 @@ mvn clean install
 ## How to use it
 
 ```
-java jar parquet-generator.jar
+java jar parquet-generator.jar -config sample-config.json
 ```
 
 expected outout:
