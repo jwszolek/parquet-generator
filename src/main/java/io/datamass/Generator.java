@@ -56,9 +56,10 @@ public class Generator {
                 rValue.numberOfNullValues = rows;
             }
             else if(item.getType().stream().map(x -> x.toUpperCase()).anyMatch(y -> y.contains("NULL"))){
-                double nullValues = rows * 0.1;
+                double nullValues = rows * 0.0;
                 rValue.numberOfNullValues = (int)nullValues;
-            }else{
+            }
+            else{
                 rValue.numberOfNullValues = 0;
             }
 
@@ -81,5 +82,5 @@ class RandomValue {
     public Integer numberOfUniqueValues;
     public Integer numberOfRestValues;
 
-    public Object lastValue;
+    public String lastValue;
 }

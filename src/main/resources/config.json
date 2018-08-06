@@ -1,11 +1,11 @@
 {
   "outputFile":"/tmp/file.parquet",
-  "rows":3,
+  "rows":10,
   "columns":[
     {
       "name":"id",
-      "uniquenessPercentage":12,
-      "type": ["int","null"]
+      "uniquenessPercentage":0,
+      "type": ["string","null"]
     },
     {
       "name":"name",
