@@ -81,5 +81,5 @@ class RandomValue {
     public Integer numberOfUniqueValues;
     public Integer numberOfRestValues;
 
-    public String lastValue;
+    public Object lastValue;
 }

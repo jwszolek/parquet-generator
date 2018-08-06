@@ -48,7 +48,7 @@ public class ParquetProducer {
                     .map(i -> record(parquetSchema, i))
                     .forEach(r -> {
                         try {
-                            //System.out.println(r.toString());
+                            System.out.println(r.toString());
                             parquetWriter.write(r);
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -112,6 +112,7 @@ public class ParquetProducer {
             if (this.currentValues.get(s).numberOfRestValues > 0) {
 
                 this.currentValues.get(s).numberOfRestValues--;
+                this.currentValues.get(s).lastValue = getValue(this.currentValues.get(s).type);
                 record.put(s, this.currentValues.get(s).lastValue);
                 continue;
             }
